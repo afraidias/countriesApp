@@ -1,9 +1,9 @@
-# countries App
+# Countries App
 
-## `Angular` + `Typescript` + `TailwindCss`
+### `Angular` + `Typescript` + `TailwindCss`
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
-This project use `Typescript` version 4.5.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2. \
+This project use `Typescript` version 4.5.2. \
 This project use `Tailwind` version 3.1.8.
 
 ## Development server

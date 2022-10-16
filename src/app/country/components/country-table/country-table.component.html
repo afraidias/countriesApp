@@ -1,0 +1,32 @@
+<table class="w-full text-sm text-left text-gray-400 dark:text-gray-400">
+    <thead class="text-xs text-gray-200 uppercase bg-gray-700">
+        <tr>
+            <th scope="col" class="py-3 px-6 rounded-l-lg">#</th>
+            <th scope="col" class="py-3 px-6">Flag</th>
+            <th scope="col" class="py-3 px-6">Name</th>
+            <th scope="col" class="py-3 px-6">Population</th>
+            <th scope="col" class="py-3 px-6 rounded-r-lg"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries; index as i" class="border-b dark:border-gray-700">
+            <td
+                scope="row"
+                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ i + 1 }}
+            </td>
+            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{ country.flag }}
+            </td>
+            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{ country.capital }}, {{ country.name.common }}
+            </td>
+            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{ country.population | number }}
+            </td>
+            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <a [routerLink]="['/country', country.cca2]">Show more ...</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+<app-title title="Capital"></app-title>
+
+<!-- Search -->
+<app-search-input
+    (onEnter)="search($event)"
+    placeholder="Search capital..."
+    >
+</app-search-input>
+
+<!-- Toast Error -->
+<div *ngIf="hasError">
+    <app-toast
+        [hasError]="hasError"
+        [criteria]="criteria"
+        (onClose)="handleToast($event)">
+    </app-toast>
+</div>
+
+<!-- Table -->
+<div *ngIf="countries.length > 0" class="overflow-x-auto relative">
+    <app-country-table [countries]="countries"></app-country-table>
+</div>

@@ -22,4 +22,8 @@ export class CountryService {
 	getCountryByCode(code: string): Observable<Country> {
 		return this.http.get<Country>(`${this.apiURL}/alpha/${code}`);
 	}
+
+	getRegion(region: string): Observable<Country[]> {
+		return this.http.get<Country[]>(`${this.apiURL}/region/${region}`);
+	}
 }

@@ -1,1 +1,25 @@
-<p>region works!</p>
+<app-title title="Region" [badge]=currentRegion></app-title>
+
+<h3 class="text-white p-2">Select region:</h3>
+<div class="mb-4">
+    <button
+        *ngFor="let region of regiones"
+        class="text-white mr-3 mb-1"
+        (click)="regionOn(region)"
+    >
+        <kbd
+            class="px-2 py-1.5 text-xs font-semibold border rounded-lg"
+            [ngClass]="{
+                'bg-gray-600 text-gray-100 border-gray-500': region !== currentRegion,
+                'text-orange-500 bg-orange-200 border-orange-500': region === currentRegion
+            }"
+        >
+            {{region | titlecase }}
+        </kbd>
+    </button>
+</div>
+
+<!-- Table -->
+<div *ngIf="countries.length > 0" class="overflow-x-auto relative">
+    <app-country-table [countries]="countries"></app-country-table>
+</div>

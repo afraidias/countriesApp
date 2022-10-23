@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body { background-color: black; }
 * {
     box-shadow: none;
     outline: none;

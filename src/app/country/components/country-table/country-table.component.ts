@@ -2,17 +2,22 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/country.interface';
 
 @Component({
-  selector: 'app-country-table',
-  templateUrl: './country-table.component.html',
-  styles: [
-  ]
+	selector: 'app-country-table',
+	templateUrl: './country-table.component.html',
+	styles: [`
+		.table--all--height {
+			height: calc(100vh - 150px)
+		}
+	`]
 })
 export class CountryTableComponent implements OnInit {
-  @Input() countries: Country[] = [];
+	@Input() countries: Country[] = [];
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+		console.log(this.countries);
+		
+	}
 
 }

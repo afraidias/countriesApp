@@ -1,12 +1,12 @@
-<div class="h-96 overflow-y-auto">
-    <table class="w-full text-sm text-left text-gray-400">
+<div class="table--all--height overflow-y-auto">
+    <table class="w-full text-sm text-left text-gray-400 table-auto">
         <thead class="text-xs uppercase bg-gray-600 text-gray-100 border-gray-500 rounded-lg">
             <tr>
-                <th scope="col" class="py-3  px-6 rounded-l-lg">#</th>
-                <th scope="col" class="py-3  px-6">Flag</th>
-                <th scope="col" class="py-3  px-6">Name</th>
-                <th scope="col" class="py-3  px-6">Population</th>
-                <th scope="col" class="py-3  px-6 rounded-r-lg"></th>
+                <th scope="col" class="py-3 px-6 w-16 rounded-l-lg">#</th>
+                <th scope="col" class="py-3 px-6 w-16">Flag</th>
+                <th scope="col" class="py-3 px-6">Name</th>
+                <th scope="col" class="py-3 px-6">Population</th>
+                <th scope="col" class="py-3 px-6 rounded-r-lg"></th>
             </tr>
         </thead>
         <tbody>
@@ -17,10 +17,10 @@
                         {{ i + 1 }}
                 </td>
                 <td class="py-4 px-6 font-medium text-white whitespace-nowrap">
-                    <img [src]="country.flags.png" [alt]="country.name.common">
+                    {{ country.flag }}
                 </td>
                 <td class="py-4 px-6 font-medium text-white whitespace-nowrap">
-                    {{ country.capital }}, {{ country.name.common }}
+                    {{ country.capital.length > 0 ? country.capital : country.name.common }}, {{ country.name.common }}
                 </td>
                 <td class="py-4 px-6 font-medium text-white whitespace-nowrap">
                     {{ country.population | number }}

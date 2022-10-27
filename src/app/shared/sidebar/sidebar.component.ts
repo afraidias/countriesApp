@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styles: [`
       li { cursor: pointer; }
       li.active span {
-          background-color: rgb(30 58 138);
+          background-color: rgba(30, 58, 138, .5);
           border-radius: 0.5rem;
-          border: 1px solid rgba(59 130 246);
+          border: 1px solid rgba(59, 130, 246);
       }
   `]
 })

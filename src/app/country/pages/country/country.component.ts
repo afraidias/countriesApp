@@ -10,7 +10,8 @@ import { CountryService } from '../../services/country.service';
 export class CountryComponent {
 	criteria: string = '';
 	hasError: boolean = false;
-	countries: Country[] = []
+	countries: Country[] = [];
+	suggestedCountries: Country[] = [];
 
 	constructor(private countryService: CountryService) { }
 
@@ -24,10 +25,28 @@ export class CountryComponent {
 		this.countryService.getCountry(country).subscribe({
 			next: (countries) => this.countries = countries,
 			error: (e) => {
-				this.handleToast(true)
+				this.handleToast(true);
 				this.countries = [];
 				console.error(e);
 			}
-		})
+		});
+	}
+
+	suggestions(criteria: string) {
+		this.hasError = false;
+		this.criteria = criteria;
+		this.countryService.getCountry(criteria).subscribe({
+			next: (countries) => this.suggestedCountries = countries.splice(0, 5),
+			error: (e) => {
+				this.handleToast(true);
+				this.suggestedCountries = [];
+				console.error(e);
+			}
+		});
+	}
+
+	searchSuggested(criteria: string) { 
+		this.search(criteria);
+		this.suggestedCountries = [];
 	}
 }

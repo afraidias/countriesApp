@@ -15,16 +15,16 @@
             <img class="w-64 h-auto rounded-lg" [src]="country[0].flags.svg" alt="image description">
         </div>
         <div>
-            <ul class="ml-4 text-left w-64 text-sm font-medium text-blue-500 bg-blue-900 rounded-lg border-blue-500">
-                <li class="flex justify-between py-2 px-4 w-full rounded-t-lg border-b border-blue-500">
+            <ul class="ml-4 text-left w-64 text-sm font-medium text-gray-300 bg-gray-900 bg-opacity-50 rounded-lg">
+                <li class="flex justify-between py-2 px-4 w-full rounded-t-lg border-b">
                     <span>Capital</span>
                     <span>{{ country[0].capital }}</span>
                 </li>
-                <li class="flex justify-between py-2 px-4 w-full border-b border-blue-500">
+                <li class="flex justify-between py-2 px-4 w-full border-b">
                     <span>Population</span>
                     <span>{{ country[0].population | number }}</span>
                 </li>
-                <li class="flex justify-between py-2 px-4 rounded-b-lg w-full border-blue-500">
+                <li class="flex justify-between py-2 px-4 rounded-b-lg w-full">
                     <span>Continent</span>
                     <span>{{ country[0].continents }}</span>
                 </li>
